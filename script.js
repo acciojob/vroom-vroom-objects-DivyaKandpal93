@@ -1,26 +1,28 @@
 class Car{
     constructor(make, model){
-        this._make = make;
-        this._model = model;
+        this.make = make;
+        this.model = model;
     }
     getMakeModel(){
-        return `${this._make} ${this._model}`;
+        return `${this.make} ${this.model}`;
     }
 }
+
 class SportsCar extends Car{
     constructor(make, model, topSpeed){
         super(make,model);
-        this._topSpeed = topSpeed;
-
+        this.topSpeed = topSpeed;
     }
     getTopSpeed(){
-        return this._topSpeed;
+        return this.topSpeed;
     }
 }
-const car = new Car("ferrari","new");
-console.log(car.getMakeModel());
-const sports = new SportsCar("tata","mata",200);
-console.log(sports.getTopSpeed());
+
+const sportsCar = new SportsCar("Ferrari", "Testarossa", 200);
+console.log(sportsCar.make); // Output: Ferrari
+console.log(sportsCar.model); // Output: Testarossa
+console.log(sportsCar.topSpeed); // Output: 200
+
 
 // Do not change the code below
 window.Car = Car;
